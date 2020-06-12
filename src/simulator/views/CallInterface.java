@@ -152,9 +152,10 @@ public class CallInterface extends JPanel {
 
     public static ImageIcon getIcon(String location){
         try{
-            imageIcon = ImageIO.read(new File(location));
+            //imageIcon = ImageIO.read(new File(location));
+            imageIcon = new ImageIcon(HomeFrame.class.getResource(location)).getImage();
         }
-        catch (IOException e){
+        catch (Exception e){
             e.printStackTrace();
         }
         Image newImage = imageIcon.getScaledInstance(84,46,Image.SCALE_SMOOTH);
